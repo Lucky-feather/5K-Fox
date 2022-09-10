@@ -22,3 +22,13 @@ margin: 10px;
 border: 2px solid rebeccapurple;
 }
 
+.info-box {
+    border: 2px dotted hotpink;
+    height: 400px;
+    justify-content: center;
+    align-items: flex-end;
+}
+.fox-chat {
+    display: flex;
+    border: 2px solid blue;
+}

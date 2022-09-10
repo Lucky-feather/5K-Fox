@@ -88,6 +88,7 @@ const goRest = document.querySelector("#go-rest")
 const resetBtn = document.querySelector(".reset")
 const startBtn = document.querySelector("#start")
 const weekStatus = document.querySelector("#week-status")
+const foxChat = document.querySelector(".fox-chat")
 /*----------------------------- Event Listeners -----------------------------*/
 
 resetBtn.addEventListener('click', resetClick)
@@ -114,7 +115,7 @@ init()
 function startWeek() {
 runLog = 0
 restLog = 0
-energy = 6
+energy = 4
 cookieTime = 0
 weekNumber = 1
 weekStatus.textContent =`Week ${weekNumber} of Training`
@@ -125,12 +126,12 @@ console.log(energy)
 //startWeek()
 
 function logRun() {
-if (energy = 0) {}
+if (energy < 2) { 
+    foxChat.textContent = "I have no energy to run right now"
+}
+else {
     runLog = runLog + 2
-    energy = energy - 2
+    energy = energy - 2 
     console.log("miles run " + runLog)
     console.log("energy level " + energy)
-}
-
-
-
+} }
