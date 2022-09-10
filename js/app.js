@@ -87,7 +87,7 @@ const goFeed = document.querySelector("#go-feed")
 const goRest = document.querySelector("#go-rest")
 const resetBtn = document.querySelector(".reset")
 const startBtn = document.querySelector("#start")
-const 
+const weekStatus = document.querySelector("#week-status")
 /*----------------------------- Event Listeners -----------------------------*/
 
 resetBtn.addEventListener('click', resetClick)
@@ -102,6 +102,7 @@ runLog = 0
 runGoal =0
 restLog = 0
 cookieTime = 0
+weekNumber = 0
 }
 
 init()
@@ -116,6 +117,7 @@ restLog = 0
 energy = 6
 cookieTime = 0
 weekNumber = 1
+weekStatus.textContent =`Week ${weekNumber} of Training`
 console.log(runLog)
 console.log(energy)
 }
