@@ -78,6 +78,7 @@ let runLog
 let runGoal
 let restLog 
 let cookieTime 
+let weekNumber
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -86,10 +87,11 @@ const goFeed = document.querySelector("#go-feed")
 const goRest = document.querySelector("#go-rest")
 const resetBtn = document.querySelector(".reset")
 const startBtn = document.querySelector("#start")
+const 
 /*----------------------------- Event Listeners -----------------------------*/
 
 resetBtn.addEventListener('click', resetClick)
-//goRun.addEventListener('click', logRun)
+goRun.addEventListener('click', logRun)
 //goFeed.addEventListener('click', increaseEnergy)
 startBtn.addEventListener('click', startWeek)
 
@@ -102,26 +104,31 @@ restLog = 0
 cookieTime = 0
 }
 
+init()
+
 function resetClick() {
-    init()
+init()
 }
 
 function startWeek() {
 runLog = 0
 restLog = 0
-energy = 0
+energy = 6
 cookieTime = 0
+weekNumber = 1
 console.log(runLog)
+console.log(energy)
 }
 
+//startWeek()
 
-init()
-startWeek()
-
-// const logRun =
-//     runLog => runLog + 2;
-//     console.log(runLog)
-
+function logRun() {
+if (energy = 0) {}
+    runLog = runLog + 2
+    energy = energy - 2
+    console.log("miles run " + runLog)
+    console.log("energy level " + energy)
+}
 
 
 
