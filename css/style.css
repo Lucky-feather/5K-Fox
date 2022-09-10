@@ -1,0 +1,24 @@
+html {
+    box-sizing: border-box;
+}
+
+#button-box {
+position: absolute;
+display: flex;
+justify-content: flex-end;
+border: 2px solid hotpink;
+width: 80%
+}
+
+.care-buttons {
+display: flex;
+border: 2px solid teal;
+flex-direction: column;
+width: 30%;
+}
+
+.care-buttons > button {
+margin: 10px;
+border: 2px solid rebeccapurple;
+}
+

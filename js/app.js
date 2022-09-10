@@ -74,10 +74,10 @@ console.log('bananas')
 
 /*-------------------------------- Variables --------------------------------*/
 
-// let runLog = 
-// let runGoal =
-// let restLog = 
-// let cookieTime = 
+let runLog
+let runGoal
+let restLog 
+let cookieTime 
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -89,21 +89,39 @@ const startBtn = document.querySelector("#start")
 /*----------------------------- Event Listeners -----------------------------*/
 
 resetBtn.addEventListener('click', resetClick)
-goRun.addEventListener('click', logRun)
-goFeed.addEventListener('click', increaseEnergy)
+//goRun.addEventListener('click', logRun)
+//goFeed.addEventListener('click', increaseEnergy)
 startBtn.addEventListener('click', startWeek)
 
 /*-------------------------------- Functions --------------------------------*/
 
 function init(){
-let runLog = 0
-let runGoal =0
-let restLog = 0
-let cookieTime = 0
+runLog = 0
+runGoal =0
+restLog = 0
+cookieTime = 0
 }
 
-function startWeek {
-    let runlog =
+function resetClick() {
+    init()
 }
+
+function startWeek() {
+runLog = 0
+restLog = 0
+energy = 0
+cookieTime = 0
+console.log(runLog)
+}
+
+
+init()
+startWeek()
+
+// const logRun =
+//     runLog => runLog + 2;
+//     console.log(runLog)
+
+
 
 
