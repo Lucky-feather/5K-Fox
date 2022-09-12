@@ -1,17 +1,5 @@
 console.log('bananas')
 
-// Start of game: 
-
-// Set Fox’s status:  
-
-// >Energy(food), 
-
-// >miles run,
-
-// >rest
-
-// >cookie
-
 
 // Set a daily mileage quota (ie 2 miles).  (Each day mileage quota will increase +1)
 
@@ -79,11 +67,14 @@ let runGoal
 let restLog 
 let cookieTime 
 let weekNumber
+let energy
 
 /*------------------------ Cached Element References ------------------------*/
 
 const goRun = document.querySelector("#go-run")
 const goFeed = document.querySelector("#go-feed")
+const cookie = document.querySelector("#cookie")
+const sandwich = document.querySelector("#sandwich")
 const goRest = document.querySelector("#go-rest")
 const resetBtn = document.querySelector(".reset")
 const startBtn = document.querySelector("#start")
@@ -93,15 +84,17 @@ const foxChat = document.querySelector(".fox-chat")
 
 resetBtn.addEventListener('click', resetClick)
 goRun.addEventListener('click', logRun)
-//goFeed.addEventListener('click', increaseEnergy)
+goFeed.addEventListener('click', endWeek)
 startBtn.addEventListener('click', startWeek)
-
+cookie.addEventListener('click', eatCookie)
+sandwich.addEventListener('click', eatSandwich)
+goRest.addEventListener('click', restTime)
 /*-------------------------------- Functions --------------------------------*/
 
 function init(){
 runLog = 0
 runGoal =0
-restLog = 0
+restLog = 2
 cookieTime = 0
 weekNumber = 0
 }
@@ -114,24 +107,95 @@ init()
 
 function startWeek() {
 runLog = 0
-restLog = 0
+runGoal = 6
+restLog = runGoal - 1
 energy = 4
 cookieTime = 0
 weekNumber = 1
 weekStatus.textContent =`Week ${weekNumber} of Training`
 console.log(runLog)
 console.log(energy)
+console.log (restLog)
 }
 
 //startWeek()
 
 function logRun() {
-if (energy < 2) { 
+if (energy < 2 || restLog === 0) { 
     foxChat.textContent = "I have no energy to run right now"
 }
-else {
+else if (runLog === runGoal - 2 && cookieTime === 0) {
+    foxChat.textContent = "I'm grouchy, running is dumb"
+    console.log(cookieTime)
+}
+else if (runLog === runGoal) { foxChat.textContent = "looks like I reached my goal for the week!  Can I have a cookie and take a nap?"
+} else {
     runLog = runLog + 2
     energy = energy - 2 
+    restLog = restLog - 1
     console.log("miles run " + runLog)
     console.log("energy level " + energy)
-} }
+    console.log("has had " + restLog + " rest")
+    console.log("run goal: " + runGoal)
+    foxChat.textContent = " "
+}
+}
+
+function increaseEnergy() {
+//pick what to feed fox
+
+}
+
+function eatCookie() {
+    cookieTime = cookieTime + 1
+    console.log("cookies " + cookieTime)
+}
+
+function eatSandwich() {
+if (energy > 4) {
+    foxChat.textContent = "I'm not hungry"
+} else {
+    energy = energy + 2
+    console.log("energy level raised to " + energy)
+}
+}
+
+function restTime() {
+restLog = restLog + 1
+console.log("rest" + restLog)
+}
+
+
+function endWeek() {
+//let gtg = false
+if (runLog < runGoal) {
+    //gtg = false
+    foxChat.textContent = "Yikes, I didn't train enough this week"
+}
+
+// if (gtg = false){ 
+//     console.log("restart same training week")}
+
+else {
+    console.log("New training week")
+}}
+
+
+function newWeek(){
+
+    runGoal = runGoal + 1
+    cookieTime = 0
+    weekNumber = weekNumber + 1 
+    weekStatus.textContent =`Week ${weekNumber} of Training`
+    console.log("miles run " + runLog)
+    console.log("energy level " + energy)
+    console.log("has had " + restLog + " rest")
+    console.log("run goal: " + runGoal)
+    }
+
+
+///end of Week
+//has run goal been met?
+//has rest been met?
+// add +1 to rungoal
+//add +1 to weekNumber
