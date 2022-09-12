@@ -85,7 +85,7 @@ const foxChat = document.querySelector(".fox-chat")
 
 resetBtn.addEventListener('click', resetClick)
 goRun.addEventListener('click', logRun)
-goFeed.addEventListener('click', endWeek)
+goFeed.addEventListener('click', feedFox)
 startBtn.addEventListener('click', startWeek)
 cookie.addEventListener('click', eatCookie)
 sandwich.addEventListener('click', eatSandwich)
@@ -100,7 +100,6 @@ restLog = runGoal - 1
 energy = 4
 cookieTime = 0
 weekNumber = 4
-
 }
 
 init()
@@ -130,7 +129,7 @@ else if (runLog === runGoal) { foxChat.textContent = "looks like I reached my go
 }
 }
 
-function increaseEnergy() {
+function feedFox() {
 //pick what to feed fox
 
 }
@@ -163,9 +162,9 @@ function endWeek() {
 if (runLog < runGoal) {
     foxChat.textContent = "Yikes, I didn't train enough this week"
     weekStatus.textContent =`Fox needs to try week ${weekNumber} again`
-    runLog -1
-
-// Timer is reset with the day’s same distance and rest quotas.
+    runLog = runLog - 1
+    weekNumber = weekNumber - 1
+    startBtn.textContent = "Try Again"
 } 
 else if (weekNumber === 5) {weekStatus.textContent ="You did it!  Fox is ready to run a 5K!"
 startBtn.textContent = "Play Again"
