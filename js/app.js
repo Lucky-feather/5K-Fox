@@ -92,12 +92,15 @@ sandwich.addEventListener('click', eatSandwich)
 goRest.addEventListener('click', restTime)
 /*-------------------------------- Functions --------------------------------*/
 
-function init(){
+
+function init() {
 runLog = 0
-runGoal =0
-restLog = 0
+runGoal = 5
+restLog = runGoal - 1
+energy = 4
 cookieTime = 0
-weekNumber = 0
+weekNumber = 4
+
 }
 
 init()
@@ -105,22 +108,6 @@ init()
 function resetClick() {
 init()
 }
-
-function startWeek() {
-runLog = 0
-runGoal = 6
-restLog = runGoal - 1
-energy = 4
-cookieTime = 0
-weekNumber = 1
-weekStatus.textContent =`Week ${weekNumber} of Training`
-console.log(runLog)
-console.log(energy)
-console.log (restLog)
-startTimer()
-}
-
-//startWeek()
 
 function logRun() {
 if (energy < 2 || restLog === 0) { 
@@ -171,46 +158,41 @@ console.log("rest" + restLog)
 function endWeek() {
 if (runLog < runGoal) {
     foxChat.textContent = "Yikes, I didn't train enough this week"
+} 
+else if (weekNumber === 5) {weekStatus.textContent ="You did it!  Fox is ready to run a 5K!"
 }
 else {
     console.log("New training week")
     foxChat.textContent = "This is awesome, let's keep going!"
+    startBtn.textContent = "Let's keep going"
     
 }}
 
 
-function newWeek(){
-
+function startWeek(){
     runGoal = runGoal + 1
     cookieTime = 0
+    runLog = 0
     weekNumber = weekNumber + 1 
     weekStatus.textContent =`Week ${weekNumber} of Training`
     console.log("miles run " + runLog)
     console.log("energy level " + energy)
     console.log("has had " + restLog + " rest")
     console.log("run goal: " + runGoal)
+    startTimer()
+    weekStatus.textContent =`Week ${weekNumber} of Training`
     }
-
-
-///end of Week
-//has run goal been met?
-//has rest been met?
-// add +1 to rungoal
-//add +1 to weekNumber
 
 function startTimer() {
 let timer = setInterval(function() {
-	// Each time the function is called, decrease the remaining time by 1
+
 	timeLeft -= 1
 console.log(timeLeft)
-// Don't forget to include the interval of 1000 ms!
+
 if (timeLeft === 0) {
     endWeek()
     clearInterval(timer)
 }
-console.log(timeLeft)
 }, 10000) 
-
-
 
 }
