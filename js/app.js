@@ -68,6 +68,7 @@ let restLog
 let cookieTime 
 let weekNumber
 let energy
+let timeLeft = 10
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -94,7 +95,7 @@ goRest.addEventListener('click', restTime)
 function init(){
 runLog = 0
 runGoal =0
-restLog = 2
+restLog = 0
 cookieTime = 0
 weekNumber = 0
 }
@@ -116,19 +117,20 @@ weekStatus.textContent =`Week ${weekNumber} of Training`
 console.log(runLog)
 console.log(energy)
 console.log (restLog)
+startTimer()
 }
 
 //startWeek()
 
 function logRun() {
 if (energy < 2 || restLog === 0) { 
-    foxChat.textContent = "I have no energy to run right now"
+    foxChat.textContent = "I have no energy right now"
 }
 else if (runLog === runGoal - 2 && cookieTime === 0) {
-    foxChat.textContent = "I'm grouchy, running is dumb"
+    foxChat.textContent = "I'm grouchy, running is dumb. Can I have a cookie?"
     console.log(cookieTime)
 }
-else if (runLog === runGoal) { foxChat.textContent = "looks like I reached my goal for the week!  Can I have a cookie and take a nap?"
+else if (runLog === runGoal) { foxChat.textContent = "looks like I reached my goal for the week!  Can I take a nap?"
 } else {
     runLog = runLog + 2
     energy = energy - 2 
@@ -167,17 +169,13 @@ console.log("rest" + restLog)
 
 
 function endWeek() {
-//let gtg = false
 if (runLog < runGoal) {
-    //gtg = false
     foxChat.textContent = "Yikes, I didn't train enough this week"
 }
-
-// if (gtg = false){ 
-//     console.log("restart same training week")}
-
 else {
     console.log("New training week")
+    foxChat.textContent = "This is awesome, let's keep going!"
+    
 }}
 
 
@@ -199,3 +197,20 @@ function newWeek(){
 //has rest been met?
 // add +1 to rungoal
 //add +1 to weekNumber
+
+function startTimer() {
+let timer = setInterval(function() {
+	// Each time the function is called, decrease the remaining time by 1
+	timeLeft -= 1
+console.log(timeLeft)
+// Don't forget to include the interval of 1000 ms!
+if (timeLeft === 0) {
+    endWeek()
+    clearInterval(timer)
+}
+console.log(timeLeft)
+}, 10000) 
+
+
+
+}
