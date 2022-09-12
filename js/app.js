@@ -136,8 +136,12 @@ function increaseEnergy() {
 }
 
 function eatCookie() {
-    cookieTime = cookieTime + 1
+    if (cookieTime > 1) {
+        foxChat.textContent = "No thanks, let's save some for later"
+    } else { cookieTime = cookieTime + 1
     console.log("cookies " + cookieTime)
+}
+foxChat.textContent = "Yum! Ok, I'm not grouchy anymore."
 }
 
 function eatSandwich() {
@@ -158,8 +162,13 @@ console.log("rest" + restLog)
 function endWeek() {
 if (runLog < runGoal) {
     foxChat.textContent = "Yikes, I didn't train enough this week"
+    weekStatus.textContent =`Fox needs to try week ${weekNumber} again`
+    runLog -1
+
+// Timer is reset with the day’s same distance and rest quotas.
 } 
 else if (weekNumber === 5) {weekStatus.textContent ="You did it!  Fox is ready to run a 5K!"
+startBtn.textContent = "Play Again"
 }
 else {
     console.log("New training week")
@@ -174,7 +183,6 @@ function startWeek(){
     cookieTime = 0
     runLog = 0
     weekNumber = weekNumber + 1 
-    weekStatus.textContent =`Week ${weekNumber} of Training`
     console.log("miles run " + runLog)
     console.log("energy level " + energy)
     console.log("has had " + restLog + " rest")
