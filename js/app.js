@@ -25,6 +25,7 @@ const resetBtn = document.querySelector(".reset")
 const startBtn = document.querySelector("#start")
 const weekStatus = document.querySelector("#week-status")
 const foxChat = document.querySelector(".fox-chat")
+const timerEl = document.querySelector("#timer")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -74,16 +75,17 @@ function startWeek(){
     }
 
 function startTimer() {
-let timeLeft = 10 
+let timeLeft = 60 
 let timer = setInterval(function() {
 	timeLeft -= 1
+    timerEl.textContent = timeLeft + ' seconds remaining'
 console.log(timeLeft)
 
 if (timeLeft <= 0) {
     clearInterval(timer)
     endWeek()
 }
-}, 10000) 
+}, 1000) 
 
 }
 
@@ -138,8 +140,8 @@ restLog = restLog + 1
 console.log("rest" + restLog)
 }
 
-
 function endWeek() {
+    timerEl.style.display = 'none'
     startBtn.style.display = 'block'
 if (runLog < runGoal) 
 {
@@ -160,4 +162,3 @@ else {
     weekStatus.textContent =`Week ${weekNumber} of training completed!`
     
 }}
-
