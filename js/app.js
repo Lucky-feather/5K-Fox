@@ -10,7 +10,7 @@ let energy
 
 const goRun = document.querySelector("#go-run")
 const cookie = document.querySelector("#cookie")
-const sandwich = document.querySelector("#sandwich")
+//const sandwich = document.querySelector("#sandwich")
 const goRest = document.querySelector("#go-rest")
 const resetBtn = document.querySelector(".reset")
 const startBtn = document.querySelector("#start")
@@ -24,7 +24,7 @@ resetBtn.addEventListener('click', init)
 goRun.addEventListener('click', logRun)
 startBtn.addEventListener('click', startWeek)
 cookie.addEventListener('click', eatCookie)
-sandwich.addEventListener('click', eatSandwich)
+//sandwich.addEventListener('click', eatSandwich)
 goRest.addEventListener('click', restTime)
 
 
