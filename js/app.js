@@ -96,7 +96,7 @@ if (runLog >= runGoal) { foxChat.textContent = "looks like I reached my goal for
     foxChat.textContent = "I have no energy right now"
 
 }
-else if (runLog === runGoal - 2 && cookieTime === 0) {
+else if (runLog > runGoal - 3 && cookieTime === 0) {
     foxChat.textContent = "I'm grouchy, running is dumb. Can I have a cookie?"
     console.log(cookieTime)
 }
