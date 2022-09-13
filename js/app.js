@@ -95,8 +95,11 @@ function logRun() {
 
 if (runLog >= runGoal){ return 
 }
-else if (energy < 2 || restLog === 0) { 
-    foxChat.textContent = "I have no energy right now"
+else if (energy < 2) { 
+    foxChat.textContent = "I'm hungry!'"
+}
+else if (restLog === 0) { 
+    foxChat.textContent = "I'm too tired to run'"
 }
 else if (runLog > runGoal - 2 && cookieTime === 0) {
     foxChat.textContent = "I'm grouchy, running is dumb. Can I have a cookie?"
@@ -127,7 +130,6 @@ console.log("cookies " + cookieTime)
     console.log("cookies " + cookieTime)
     foxChat.textContent = "Yum! Thanks, I'm not grouchy anymore"
 }
-
 foodBox.style.display = 'none'
 }
 
@@ -138,12 +140,14 @@ if (energy > 6) {
 } else {
     energy = energy + 2
     console.log("energy level raised to " + energy)
+    foxChat.textContent = " "
 }
 }
 
 function restTime() {
 restLog = restLog + 1
 console.log("rest" + restLog)
+foxChat.textContent = " "
 }
 
 function endWeek() {
