@@ -41,18 +41,18 @@ goRest.addEventListener('click', restTime)
 function init() {
 runLog = 0
 runGoal = 5
-restLog = runGoal - 1
+restLog = runGoal - 2
 energy = 8
 cookieTime = 0
 weekNumber = 0
 distance = 1.5
 foodBox.style.display = 'none'
 weekStatus.textContent = 'I want to run a 5k!'
-goRun.textContent = `let's go!`
+// goRun.textContent = `let's go!`
 }
 
 init()
-goRun.textContent = ` let's go for a ${distance} mile run`
+
 
 function resetClick() {
 init()
@@ -60,8 +60,8 @@ init()
 
 function startWeek(){
     runGoal = runGoal + 1
-    cookieTime = 1
-    runLog = 6
+    cookieTime = 0
+    runLog = 0
     weekNumber = weekNumber + 1 
     //distance = distance + 0.5
     console.log("miles run " + runLog)
@@ -69,7 +69,9 @@ function startWeek(){
     console.log("has had " + restLog + " rest")
     console.log("run goal: " + runGoal)
     startTimer()
-    weekStatus.textContent =`Week ${weekNumber} of Training`
+    weekStatus.textContent =`Week ${weekNumber} of Training.
+    Goal distance: ${runGoal} miles`
+    goRun.textContent = ` let's go for a ${distance} mile run`
     startBtn.style.display = 'hidden'
     }
 
@@ -83,7 +85,7 @@ if (timeLeft <= 0) {
     clearInterval(timer)
     endWeek()
 }
-}, 1000) 
+}, 10000) 
 
 }
 
@@ -95,18 +97,15 @@ else if (runLog === runGoal - 2 && cookieTime === 0) {
     foxChat.textContent = "I'm grouchy, running is dumb. Can I have a cookie?"
     console.log(cookieTime)
 }
-else if (runLog > runGoal) { foxChat.textContent = "looks like I reached my goal for the week!  Can I take a nap?"
+else if (runLog >= runGoal) { foxChat.textContent = "looks like I reached my goal for the week!  Can I take a nap?"
+return
+
 }
 else {
     runLog = runLog + distance
     energy = energy - 2 
     restLog = restLog - 1
-    console.log("miles run " + runLog)
-    console.log("energy level " + energy)
-    console.log("has had " + restLog + " rest")
-    console.log("run goal: " + runGoal)
-    console.log("ran " + distance + " miles")
-    foxChat.textContent = " "
+    foxChat.textContent = `I've run ${runLog} miles so far`
 }
 }
 
