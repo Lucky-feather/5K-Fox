@@ -45,7 +45,7 @@ runGoal = 1
 restLog = runGoal - 1
 energy = 8
 cookieTime = 0
-weekNumber = 0
+weekNumber = 4
 distance = 1
 foodBox.style.display = 'none'
 weekStatus.textContent = 'I want to run a 5k!'
@@ -88,9 +88,9 @@ if (timeLeft <= 0) {
 
 function logRun() {
 
-if (runLog >= runGoal) { foxChat.textContent = "looks like I reached my goal for the week"
-    return
-} else if (energy < 2 || restLog === 0) { 
+if (runLog >= runGoal){ return 
+}
+else if (energy < 2 || restLog === 0) { 
     foxChat.textContent = "I have no energy right now"
 }
 else if (runLog > runGoal - 2 && cookieTime === 0) {
@@ -103,7 +103,11 @@ else {
     restLog = restLog - 1
     foxChat.textContent = `I've run ${runLog} miles so far`
 }
-}
+if (runLog >= runGoal) { 
+    foxChat.textContent =  `Hooray! I reached my goal for the week. 
+    I ran ${runLog} miles! `
+}}
+
 function feedFox() {
     foxChat.textContent = " "
     console.log("food time")
@@ -150,6 +154,7 @@ if (runLog < runGoal)
     startBtn.textContent = "Try Again"
 } 
 else if (weekNumber === 5) {weekStatus.textContent ="You did it!  Fox is ready to run a 5K!"
+confetti.start(2000)
 startBtn.textContent = "Play Again"
 }
 else {

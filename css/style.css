@@ -16,9 +16,11 @@ body {
 
 #banner {
     grid-row: 1/2;
+    display: flex;
     justify-content:center;
     align-items: center;
     flex-direction: row;
+    margin: auto;
 }
 
 h1 {
@@ -65,7 +67,9 @@ border: 8px solid lime;
 }
 
 .fox-chat {
-display: block;
+display: flex;
+align-items: center;
+justify-content: center;
 margin: 0;
 padding: 0;
 color: #292f36;
@@ -86,7 +90,7 @@ height: 100%;
 display: flex;
 border: 2px solid teal;
 flex-direction:row;
-width: 80%;
+width: 90%;
 justify-content: space-evenly;
 }
 
@@ -102,6 +106,7 @@ padding: 3%;
 .food {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
 justify-content: center;
     color: #fcfff7;
@@ -109,7 +114,6 @@ justify-content: center;
     border-radius: 15px;
     height: auto;
     width: 50%;
-    padding: 3%;
     }
 
 .food > button {
@@ -129,4 +133,4 @@ width: 20%;
 margin-left: 10%;
 
 }
-/*******************
+
