@@ -40,15 +40,14 @@ goRest.addEventListener('click', restTime)
 
 function init() {
 runLog = 0
-runGoal = 5
-restLog = runGoal - 2
+runGoal = 2
+restLog = runGoal - 1
 energy = 8
 cookieTime = 0
 weekNumber = 0
-distance = 1.5
+distance = 1
 foodBox.style.display = 'none'
 weekStatus.textContent = 'I want to run a 5k!'
-// goRun.textContent = `let's go!`
 }
 
 init()
@@ -63,7 +62,6 @@ function startWeek(){
     cookieTime = 0
     runLog = 0
     weekNumber = weekNumber + 1 
-    //distance = distance + 0.5
     console.log("miles run " + runLog)
     console.log("energy level " + energy)
     console.log("has had " + restLog + " rest")
@@ -72,7 +70,7 @@ function startWeek(){
     weekStatus.textContent =`Week ${weekNumber} of Training.
     Goal distance: ${runGoal} miles`
     goRun.textContent = ` let's go for a ${distance} mile run`
-    startBtn.style.display = 'hidden'
+    startBtn.style.display = 'none'
     }
 
 function startTimer() {
@@ -90,17 +88,19 @@ if (timeLeft <= 0) {
 }
 
 function logRun() {
-if (energy < 2 || restLog === 0) { 
+
+if (runLog >= runGoal) { foxChat.textContent = "looks like I reached my goal for the week"
+    return
+
+} else if (energy < 2 || restLog === 0) { 
     foxChat.textContent = "I have no energy right now"
+
 }
 else if (runLog === runGoal - 2 && cookieTime === 0) {
     foxChat.textContent = "I'm grouchy, running is dumb. Can I have a cookie?"
     console.log(cookieTime)
 }
-else if (runLog >= runGoal) { foxChat.textContent = "looks like I reached my goal for the week!  Can I take a nap?"
-return
 
-}
 else {
     runLog = runLog + distance
     energy = energy - 2 
@@ -115,17 +115,19 @@ function feedFox() {
 }
 
 function eatCookie() {
-    if (cookieTime > 1) {
-foxChat.textContent = "No thanks, let's save some for later"
+    if (cookieTime >= 1) {
+foxChat.textContent = "I don't need another cookie."
+console.log("cookies " + cookieTime)
     } else { cookieTime = cookieTime + 1
     console.log("cookies " + cookieTime)
+    foxChat.textContent = "Yum! Thanks, I'm not grouchy anymore"
 }
-foxChat.textContent = "Yum! Ok, I'm not grouchy anymore"
+
 foodBox.style.display = 'none'
 }
 
 function eatSandwich() {
-    foodBox.style.display = 'hidden'
+    foodBox.style.display = 'none'
 if (energy > 6) {
     foxChat.textContent = "I'm not hungry"
 } else {
@@ -141,6 +143,7 @@ console.log("rest" + restLog)
 
 
 function endWeek() {
+    startBtn.style.display = 'block'
 if (runLog < runGoal) 
 {
     foxChat.textContent = "Yikes, I didn't train enough this week"
