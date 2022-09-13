@@ -1,9 +1,4 @@
 
-/*-------------------------------- Constants --------------------------------*/
-
-
-
-/*-------------------------------- Variables --------------------------------*/
 
 let runLog
 let runGoal
@@ -12,11 +7,8 @@ let cookieTime
 let weekNumber
 let energy
 
-/*------------------------ Cached Element References ------------------------*/
 
 const goRun = document.querySelector("#go-run")
-const goFeed = document.querySelector("#go-feed")
-const foodBox = document.querySelector(".food")
 const cookie = document.querySelector("#cookie")
 const sandwich = document.querySelector("#sandwich")
 const goRest = document.querySelector("#go-rest")
@@ -27,16 +19,13 @@ const foxChat = document.querySelector(".fox-chat")
 const timerEl = document.querySelector("#timer")
 const careBtns = document.querySelector("#button-box")
 
-/*----------------------------- Event Listeners -----------------------------*/
 
 resetBtn.addEventListener('click', init)
 goRun.addEventListener('click', logRun)
-goFeed.addEventListener('click', feedFox)
 startBtn.addEventListener('click', startWeek)
 cookie.addEventListener('click', eatCookie)
 sandwich.addEventListener('click', eatSandwich)
 goRest.addEventListener('click', restTime)
-/*-------------------------------- Functions --------------------------------*/
 
 
 function init() {
@@ -47,12 +36,12 @@ energy = 8
 cookieTime = 0
 weekNumber = 4
 distance = 1
+
 resetBtn.style.display = 'none'
-foodBox.style.display = 'none'
-//careBtns.style.display = 'none'
+careBtns.style.display = 'none'
 weekStatus.textContent = 'I want to run a 5k!'
 startBtn.textContent = "Start"
-foxChat.textContent = "Hello!  I really want to run a 5k.  Can you help me train? I need to go for several runs during the week.  Sometimes I need to take a nap, or eat a sandwich to get energy.  If I get grouchy, I need a cookie for motivation. press The 'Start' button when you're ready" 
+foxChat.textContent = "Hello!  I really want to run a 5k.  Can you help me train? I need to go for several runs during the week.  Sometimes I need to take a nap to get energy.  If I get grouchy, I need a cookie for motivation. Press the 'Start' button when you're ready" 
 }
 
 init()
@@ -95,11 +84,11 @@ function logRun() {
 
 if (runLog >= runGoal){ return 
 }
-else if (energy < 2) { 
-    foxChat.textContent = "I'm hungry!'"
-}
+// else if (energy < 2) { 
+//     foxChat.textContent = "Snack please? I'm hungry!'"
+// }
 else if (restLog === 0) { 
-    foxChat.textContent = "I'm too tired to run'"
+    foxChat.textContent = "I'm too tired to run"
 }
 else if (runLog > runGoal - 2 && cookieTime === 0) {
     foxChat.textContent = "I'm grouchy, running is dumb. Can I have a cookie?"
@@ -107,7 +96,7 @@ else if (runLog > runGoal - 2 && cookieTime === 0) {
 }
 else {
     runLog = runLog + distance
-    energy = energy - 2 
+//    energy = energy - 2 
     restLog = restLog - 1
     foxChat.textContent = `Miles run so far: ${runLog}`
 }
@@ -116,11 +105,6 @@ if (runLog >= runGoal) {
     I ran ${runLog} miles! `
 }}
 
-function feedFox() {
-    foxChat.textContent = " "
-    console.log("food time")
-    foodBox.style.display= 'block'
-}
 
 function eatCookie() {
     if (cookieTime >= 1) {
@@ -130,24 +114,22 @@ console.log("cookies " + cookieTime)
     console.log("cookies " + cookieTime)
     foxChat.textContent = "Yum! Thanks, I'm not grouchy anymore"
 }
-foodBox.style.display = 'none'
 }
 
-function eatSandwich() {
-    foodBox.style.display = 'none'
-if (energy > 6) {
-    foxChat.textContent = "I'm not hungry"
-} else {
-    energy = energy + 2
-    console.log("energy level raised to " + energy)
-    foxChat.textContent = " "
-}
-}
+// function eatSandwich() {
+//     if (energy > 6) {
+//     foxChat.textContent = "I'm not hungry"
+// } else {
+//     energy = energy + 2
+//     console.log("energy level raised to " + energy)
+//     foxChat.textContent = " I have energy to run now "
+// }
+// }
 
 function restTime() {
 restLog = restLog + 1
 console.log("rest" + restLog)
-foxChat.textContent = " "
+foxChat.textContent = " I feel rested now"
 }
 
 function endWeek() {
@@ -164,7 +146,7 @@ if (runLog < runGoal)
 else if (weekNumber === 5) {weekStatus.textContent ="You did it!  Fox is ready to run a 5K!"
 confetti.start(2000)
 foxChat.textContent = "Hooray! we did it!"
-startBtn.textContent = "Play Again"
+startBtn.style.display = 'none'
 }
 else {
     console.log("New training week")
