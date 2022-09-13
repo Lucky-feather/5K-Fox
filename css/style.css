@@ -29,7 +29,7 @@ height: 40%;
 width: 60%;
 margin: 10px;
 font-size: 20px;
-font-style: bolder;
+font-style: bolder; 
 
 }
 #timer {
@@ -66,12 +66,12 @@ border: 8px solid lime;
 }
 
 .info-box {
-    display: flex;
-    grid-row: 4/5;
-    border: 2px dotted hotpink;
-    size: 100%;
-    justify-content: center;
-    align-items: stretch;
+display: flex;
+grid-row: 4/5;
+border: 2px dotted hotpink;
+size: 100%;
+justify-content: center;
+align-items: stretch;
 }
 
 .fox-chat {
@@ -132,11 +132,11 @@ margin: 5%;
 border-radius: 15px;
 background-color: #F6AE2D;
 border: none;
-    }
+}
 
 
 #health{
-    display: none;
+display: none;
 }
 
 .reset {
@@ -150,6 +150,90 @@ margin-left: 10%;
 border-radius: 15px;
 background-color: #F6AE2D;
 border: none;
+}
+
+@media only screen and (min-width: 600px) {
+
+html {
+box-sizing: border-box;
+}
+body {
+margin: 0;
+display: grid;
+grid-template-columns: 25% 45% 30%;
+grid-template-rows: 15% 40% ; 
+}
+
+#banner {
+width: 90%;
+height: 15%;
+grid-area: 1/1/2/4;
+display: flex;
+justify-content:center;
+align-items: center;
+flex-direction: row;
+align-content: flex-start;
+}
+
+h1 {
+grid-column: 1/3;
+display: inline;
+height: auto;
+width: auto;
+margin: 0;
+font-style: bolder;
+}
+
+#timer {
+border: 0;
+width: 30%;
+align-items: center;
+}
+
+#start {
+grid-row: 1/3/2/4;
+height: 30px;
+width: 60px;
+margin: 10%;
+padding:0;
+}
+
+#fox-image {
+    grid-area: 2/2/3/3;
+    }
+
+.info-box {
+    display: flex;
+    grid-area: 3/2/5/3;
+    border: 2px dotted hotpink;
+    size: 100%;
+    justify-content: center;
+    align-items: stretch;
+    font-size: large;
+    }
+
+#button-box {
+grid-area: 2/3/3/4;
+}
+
+.care-buttons {
+    flex-direction: column;
+}
+
+.care-buttons > button {
+    width: auto;
+    height: 30%;
+}
+
+.reset {
+    grid-row: 6/7;
+    align-items: center;
+    padding: 2%;
+    justify-content: center;
+    color: #292f36;
+    width: 20%;
+    margin-left: 10%;
+    }
 
 }
 
