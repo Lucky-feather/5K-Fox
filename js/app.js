@@ -29,7 +29,7 @@ const timerEl = document.querySelector("#timer")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-resetBtn.addEventListener('click', resetClick)
+resetBtn.addEventListener('click', init)
 goRun.addEventListener('click', logRun)
 goFeed.addEventListener('click', feedFox)
 startBtn.addEventListener('click', startWeek)
@@ -49,14 +49,10 @@ weekNumber = 0
 distance = 1
 foodBox.style.display = 'none'
 weekStatus.textContent = 'I want to run a 5k!'
+startBtn.textContent = "Start"
 }
 
 init()
-
-
-function resetClick() {
-init()
-}
 
 function startWeek(){
     runGoal = runGoal + 2
@@ -72,6 +68,7 @@ function startWeek(){
     Goal distance: ${runGoal} miles`
     goRun.textContent = ` let's go for a ${distance} mile run`
     startBtn.style.display = 'none'
+    resetBtn.style.display = 'none'
     }
 
 function startTimer() {
@@ -143,6 +140,7 @@ console.log("rest" + restLog)
 function endWeek() {
     timerEl.style.display = 'none'
     startBtn.style.display = 'block'
+    resetBtn.style.display = 'block'
 if (runLog < runGoal) 
 {
     foxChat.textContent = "Yikes, I didn't train enough this week"
