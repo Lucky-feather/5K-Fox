@@ -40,7 +40,7 @@ goRest.addEventListener('click', restTime)
 
 function init() {
 runLog = 0
-runGoal = 2
+runGoal = 1
 restLog = runGoal - 1
 energy = 8
 cookieTime = 0
@@ -58,7 +58,7 @@ init()
 }
 
 function startWeek(){
-    runGoal = runGoal + 1
+    runGoal = runGoal + 2
     cookieTime = 0
     runLog = 0
     weekNumber = weekNumber + 1 
@@ -91,16 +91,13 @@ function logRun() {
 
 if (runLog >= runGoal) { foxChat.textContent = "looks like I reached my goal for the week"
     return
-
 } else if (energy < 2 || restLog === 0) { 
     foxChat.textContent = "I have no energy right now"
-
 }
-else if (runLog > runGoal - 3 && cookieTime === 0) {
+else if (runLog > runGoal - 2 && cookieTime === 0) {
     foxChat.textContent = "I'm grouchy, running is dumb. Can I have a cookie?"
     console.log(cookieTime)
 }
-
 else {
     runLog = runLog + distance
     energy = energy - 2 
@@ -108,8 +105,8 @@ else {
     foxChat.textContent = `I've run ${runLog} miles so far`
 }
 }
-
 function feedFox() {
+    foxChat.textContent = " "
     console.log("food time")
     foodBox.style.display= 'block'
 }
@@ -149,7 +146,7 @@ if (runLog < runGoal)
     foxChat.textContent = "Yikes, I didn't train enough this week"
     weekStatus.textContent =`Fox needs to try week ${weekNumber} again`
     weekNumber = weekNumber - 1
-    distance = distance - 0.5
+    distance = distance - 1
     startBtn.textContent = "Try Again"
 } 
 else if (weekNumber === 5) {weekStatus.textContent ="You did it!  Fox is ready to run a 5K!"
