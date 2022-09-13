@@ -2,7 +2,7 @@ html {
     box-sizing: border-box;
 }
 body {
-    background-color: whitesmoke;
+    background-color: #fcfff7;
     font-family: Ubuntu;
     margin: 0;
     min-height: 100vh;
@@ -61,7 +61,7 @@ border: 8px solid lime;
 .fox-chat {
 margin: 0;
 padding: 0;
-border: 2px solid blue;
+color: #292f36;
 }
 
 #button-box {
@@ -85,7 +85,8 @@ justify-content: space-evenly;
 
 .care-buttons > button {
 margin: 2px;
-border: 2px solid rebeccapurple;
+color: #fcfff7;
+background-color: #292f36;
 border-radius: 15px;
 height: auto;
 }
