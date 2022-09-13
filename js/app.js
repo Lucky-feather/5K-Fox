@@ -10,7 +10,6 @@ let energy
 
 const goRun = document.querySelector("#go-run")
 const cookie = document.querySelector("#cookie")
-//const sandwich = document.querySelector("#sandwich")
 const goRest = document.querySelector("#go-rest")
 const resetBtn = document.querySelector(".reset")
 const startBtn = document.querySelector("#start")
@@ -24,7 +23,6 @@ resetBtn.addEventListener('click', init)
 goRun.addEventListener('click', logRun)
 startBtn.addEventListener('click', startWeek)
 cookie.addEventListener('click', eatCookie)
-//sandwich.addEventListener('click', eatSandwich)
 goRest.addEventListener('click', restTime)
 
 
@@ -40,6 +38,7 @@ distance = 1
 resetBtn.style.display = 'none'
 careBtns.style.display = 'none'
 weekStatus.textContent = 'I want to run a 5k!'
+startBtn.style.display = 'block'
 startBtn.textContent = "Start"
 foxChat.textContent = "Hello!  I really want to run a 5k.  Can you help me train? I need to go for several runs during the week.  Sometimes I need to take a nap to get energy.  If I get grouchy, I need a cookie for motivation. Press the 'Start' button when you're ready" 
 }
@@ -77,16 +76,12 @@ if (timeLeft <= 0) {
     endWeek()
 }
 }, 1000) 
-
 }
 
 function logRun() {
 
 if (runLog >= runGoal){ return 
 }
-// else if (energy < 2) { 
-//     foxChat.textContent = "Snack please? I'm hungry!'"
-// }
 else if (restLog === 0) { 
     foxChat.textContent = "I'm too tired to run"
 }
@@ -96,7 +91,6 @@ else if (runLog > runGoal - 2 && cookieTime === 0) {
 }
 else {
     runLog = runLog + distance
-//    energy = energy - 2 
     restLog = restLog - 1
     foxChat.textContent = `Miles run so far: ${runLog}`
 }
@@ -107,7 +101,9 @@ if (runLog >= runGoal) {
 
 
 function eatCookie() {
-    if (cookieTime >= 1) {
+    if (runLog >= runGoal){ return 
+} 
+else if (cookieTime >= 1) {
 foxChat.textContent = "I don't need another cookie."
 console.log("cookies " + cookieTime)
     } else { cookieTime = cookieTime + 1
@@ -116,17 +112,11 @@ console.log("cookies " + cookieTime)
 }
 }
 
-// function eatSandwich() {
-//     if (energy > 6) {
-//     foxChat.textContent = "I'm not hungry"
-// } else {
-//     energy = energy + 2
-//     console.log("energy level raised to " + energy)
-//     foxChat.textContent = " I have energy to run now "
-// }
-// }
-
 function restTime() {
+if (runLog >= runGoal){ 
+    return 
+} 
+else
 restLog = restLog + 1
 console.log("rest" + restLog)
 foxChat.textContent = " I feel rested now"
@@ -136,8 +126,7 @@ function endWeek() {
     timerEl.style.display = 'none'
     startBtn.style.display = 'block'
     resetBtn.style.display = 'block'
-if (runLog < runGoal) 
-{
+if (runLog < runGoal) {
     foxChat.textContent = "Yikes, I didn't train enough this week"
     weekStatus.textContent =`Fox needs to try week ${weekNumber} again`
     weekNumber = weekNumber - 1
