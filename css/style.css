@@ -161,7 +161,7 @@ body {
 margin: 0;
 display: grid;
 grid-template-columns: 25% 45% 30%;
-grid-template-rows: 15% 40% ; 
+grid-template-rows: 15% 40% 40%; 
 }
 
 #banner {
@@ -204,12 +204,11 @@ padding:0;
 
 .info-box {
     display: flex;
-    grid-area: 3/2/5/3;
-    border: 2px dotted hotpink;
+    grid-area: 3/2/4/3;
     size: 100%;
     justify-content: center;
     align-items: stretch;
-    font-size: large;
+    font-size: 20px;
     }
 
 #button-box {
@@ -223,17 +222,13 @@ grid-area: 2/3/3/4;
 .care-buttons > button {
     width: auto;
     height: 30%;
+    font-size: 20px;
 }
 
 .reset {
     grid-row: 6/7;
-    align-items: center;
-    padding: 2%;
-    justify-content: center;
-    color: #292f36;
-    width: 20%;
-    margin-left: 10%;
+
     }
 
 }
-
+begin css formatting for desktop
