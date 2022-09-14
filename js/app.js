@@ -47,7 +47,7 @@ function startWeek(){
     careBtns.style.display = 'block'
     startBtn.style.display = 'none'
     resetBtn.style.display = 'none'
-   // timerEl.style.display = 'block'
+    timerEl.style.display = 'block'
     foxChat.textContent = " "
     }
 
@@ -55,7 +55,7 @@ function startTimer() {
 let timeLeft = 60 
 let timer = setInterval(function() {
 	timeLeft -= 1
-//    timerEl.textContent = timeLeft + ' seconds remaining'
+timerEl.textContent = timeLeft + ' seconds remaining'
 console.log(timeLeft)
 
 if (timeLeft <= 0) {
@@ -107,7 +107,7 @@ foxChat.textContent = " I feel rested. Can we run now?"
 }
 
 function endWeek() {
- //   timerEl.style.display = 'none'
+timerEl.style.display = 'none'
     startBtn.style.display = 'block'
     resetBtn.style.display = 'block'
 if (runLog < runGoal) {

@@ -1,6 +1,7 @@
 html {
 box-sizing: border-box;
 }
+
 body {
 background-color: #fcfff7;
 font-family: poppins;
@@ -133,6 +134,7 @@ border-radius: 15px;
 background-color: #F6AE2D;
 border: none;
 }
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 @media only screen and (min-width: 600px) {
 
 html {
@@ -175,7 +177,7 @@ font-style: bolder;
 grid-area: 1/3/2/4;
 width: 90px;
 height: 30px;
-padding:0;
+margin: 5px;
 }
 
 #fox-image {
@@ -192,9 +194,9 @@ grid-area: 4/2/5/3;
 size: 100%;
 justify-content: center;
 align-content: flex-start;
-align-items: stretch;
+align-items: center;
 background-color: #db3a34;
-border-radius: 30%;
+border-radius: 5%;
 color:#fcfff7;
 font-size: 20px;
 margin: 0;
@@ -202,10 +204,25 @@ min-height: 300px;
 min-width: 450px;
 }
 
+.timer {
+display: flex;
+align-items: center;
+justify-content: center;
+max-height: 30px;
+width: 80%;
+margin: auto;
+}
+
+#timer {
+    font-size: 15px;
+    color: #F6AE2D;
+}
+
 .fox-chat {
 display: flex;
 align-items: center;
 justify-content: center;
+min-height: 80px;
 margin: 0;
 padding: 3%;
 color:#fcfff7;
@@ -228,6 +245,8 @@ font-size: 20px;
 .reset {
 grid-row: 5/6;
 }
+
+
 
 }
 
