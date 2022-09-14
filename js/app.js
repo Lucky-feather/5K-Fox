@@ -1,13 +1,3 @@
-
-
-let runLog
-let runGoal
-let restLog 
-let cookieTime 
-let weekNumber
-let energy
-
-
 const goRun = document.querySelector("#go-run")
 const cookie = document.querySelector("#cookie")
 const goRest = document.querySelector("#go-rest")
@@ -50,10 +40,6 @@ function startWeek(){
     cookieTime = 0
     runLog = 0
     weekNumber = weekNumber + 1 
-    console.log("miles run " + runLog)
-    console.log("energy level " + energy)
-    console.log("has had " + restLog + " rest")
-    console.log("run goal: " + runGoal)
     startTimer()
     weekStatus.textContent =`Week ${weekNumber} of Training.`
     weekGoal.textContent = `Goal distance: ${runGoal} miles`
@@ -61,7 +47,7 @@ function startWeek(){
     careBtns.style.display = 'block'
     startBtn.style.display = 'none'
     resetBtn.style.display = 'none'
-    timerEl.style.display = 'block'
+   // timerEl.style.display = 'block'
     foxChat.textContent = " "
     }
 
@@ -69,7 +55,7 @@ function startTimer() {
 let timeLeft = 60 
 let timer = setInterval(function() {
 	timeLeft -= 1
-    timerEl.textContent = timeLeft + ' seconds remaining'
+//    timerEl.textContent = timeLeft + ' seconds remaining'
 console.log(timeLeft)
 
 if (timeLeft <= 0) {
@@ -106,9 +92,7 @@ function eatCookie() {
 } 
 else if (cookieTime >= 1) {
 foxChat.textContent = "I don't need another cookie."
-console.log("cookies " + cookieTime)
     } else { cookieTime = cookieTime + 1
-    console.log("cookies " + cookieTime)
     foxChat.textContent = "Yum! Thanks, I'm not grouchy anymore"
 }
 }
@@ -119,12 +103,11 @@ if (runLog >= runGoal){
 } 
 else
 restLog = restLog + 1
-console.log("rest" + restLog)
-foxChat.textContent = " I feel rested now"
+foxChat.textContent = " I feel rested. Can we run now?"
 }
 
 function endWeek() {
-    timerEl.style.display = 'none'
+ //   timerEl.style.display = 'none'
     startBtn.style.display = 'block'
     resetBtn.style.display = 'block'
 if (runLog < runGoal) {
