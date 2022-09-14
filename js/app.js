@@ -17,6 +17,7 @@ const weekStatus = document.querySelector("#week-status")
 const foxChat = document.querySelector(".fox-chat")
 const timerEl = document.querySelector("#timer")
 const careBtns = document.querySelector("#button-box")
+const weekGoal = document.querySelector("#week-goal")
 
 
 resetBtn.addEventListener('click', init)
@@ -28,11 +29,11 @@ goRest.addEventListener('click', restTime)
 
 function init() {
 runLog = 0
-runGoal = 1
+runGoal = 2
 restLog = runGoal - 1
 energy = 8
 cookieTime = 0
-weekNumber = 4
+weekNumber = 0
 distance = 1
 
 resetBtn.style.display = 'none'
@@ -46,7 +47,6 @@ foxChat.textContent = "Hello!  I really want to run a 5k.  Can you help me train
 init()
 
 function startWeek(){
-    runGoal = runGoal + 2
     cookieTime = 0
     runLog = 0
     weekNumber = weekNumber + 1 
@@ -55,12 +55,13 @@ function startWeek(){
     console.log("has had " + restLog + " rest")
     console.log("run goal: " + runGoal)
     startTimer()
-    weekStatus.textContent =`Week ${weekNumber} of Training.
-    Goal distance: ${runGoal} miles`
+    weekStatus.textContent =`Week ${weekNumber} of Training.`
+    weekGoal.textContent = `Goal distance: ${runGoal} miles`
     goRun.textContent = ` let's go for a ${distance} mile run`
     careBtns.style.display = 'block'
     startBtn.style.display = 'none'
     resetBtn.style.display = 'none'
+    timerEl.style.display = 'block'
     foxChat.textContent = " "
     }
 
@@ -142,6 +143,7 @@ else {
     foxChat.textContent = "This is awesome, let's keep going!"
     startBtn.textContent = "continue to next week"
     distance = distance + 1
+    runGoal = runGoal + 2
     weekStatus.textContent =`Week ${weekNumber} of training completed!`
     
 }}
