@@ -24,7 +24,7 @@ runGoal = 2
 restLog = 2
 energy = 8
 cookieTime = 0
-weekNumber = 0
+weekNumber = 4
 distance = 1
 
 resetBtn.style.display = 'none'
@@ -123,10 +123,12 @@ if (runLog < runGoal) {
     weekNumber = weekNumber - 1
     startBtn.textContent = "Try Again"
 } 
-else if (weekNumber === 5) {weekStatus.textContent ="You did it!  Fox is ready to run a 5K!"
-confetti.start(2000)
-foxChat.textContent = "Hooray! we did it!"
-startBtn.style.display = 'none'
+else if (weekNumber === 5) {
+    foxPic.src = "images/happy-fox.jpg"
+    weekStatus.textContent ="You did it!  Fox is ready to run a 5K!"
+    confetti.start(2000)
+    foxChat.textContent = "Hooray! we did it!"
+    startBtn.style.display = 'none'
 }
 else {
     foxPic.src = "images/happy-fox.jpg"
