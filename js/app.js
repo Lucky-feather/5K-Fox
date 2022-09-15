@@ -9,7 +9,7 @@ const timerEl = document.querySelector("#timer")
 const careBtns = document.querySelector("#button-box")
 const weekGoal = document.querySelector("#week-goal")
 const foxPic = document.querySelector("#fox-pic")
-
+const favicon =document.querySelector("#favicon")
 const hooray = new Audio("audio/game-win.mp3")
 
 
