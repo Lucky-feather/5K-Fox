@@ -34,7 +34,7 @@ careBtns.style.display = 'none'
 weekStatus.textContent = 'I want to run a 5k!'
 startBtn.style.display = 'block'
 startBtn.textContent = "Start"
-foxChat.textContent = "Hello!  I really want to run a 5k.  Can you help me train? I need to go for several runs during the week.  Sometimes I need to take a nap to get energy.  If I get grouchy, I need a cookie for motivation. Press the 'Start' button when you're ready" 
+foxChat.innerHTML = "Hello!  I really want to run a 5k.  Can you help me train? <br> <br> I need to go for several runs during the week.  Sometimes I need to take a nap to get energy.  If I get grouchy, I need a cookie for motivation. <br> <br> You have 60 seconds to help me log a week's worth of runs, so take your time if you want.  Press the 'Start' button when you're ready" 
 }
 
 init()
