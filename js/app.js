@@ -22,7 +22,7 @@ goRest.addEventListener('click', restTime)
 
 function init() {
 runLog = 0
-runGoal = 4
+runGoal = 5
 restLog = 2
 energy = 4
 cookieTime = 0
@@ -43,26 +43,26 @@ function startWeek(){
     cookieTime = 0
     runLog = 0
     weekNumber = weekNumber + 1 
+if (runGoal >= 6) {
+        distance = distance + 0.5
+}
     startTimer()
     weekStatus.textContent =`Week ${weekNumber} of Training.`
     weekGoal.textContent = `Goal distance: ${runGoal} miles`
-    goRun.textContent = ` let's go for a ${distance} mile run`
+    goRun.textContent = ` Let's go for a ${distance} mile run`
     careBtns.style.display = 'block'
     startBtn.style.display = 'none'
     resetBtn.style.display = 'none'
     timerEl.style.display = 'block'
     foxChat.textContent = " "
     foxPic.src = "images/sitting-fox.jpg"
-
     }
 
 function startTimer() {
 let timeLeft = 60 
 let timer = setInterval(function() {
 	timeLeft -= 1
-timerEl.textContent = timeLeft + ' seconds remaining'
-console.log(timeLeft)
-
+    timerEl.textContent = timeLeft + ' seconds remaining'
 if (timeLeft <= 0) {
     clearInterval(timer)
     endWeek()
@@ -77,7 +77,7 @@ if (runLog >= runGoal){ return
 else if (restLog === 0) { 
     foxChat.textContent = "I'm too tired to run"
 }
-else if (runLog > runGoal - 2 && cookieTime === 0) {
+else if (runLog > runGoal - 3 && cookieTime === 0) {
     foxChat.textContent = "I'm grouchy, running is dumb. Can I have a cookie?"
     foxPic.src = "images/parking-lot-fox.jpg"
 }
@@ -87,7 +87,7 @@ else {
     foxChat.textContent = `Miles run so far: ${runLog}`
 }
 if (runLog >= runGoal) { 
-    foxChat.textContent =  `Hooray! I reached my goal for the week. I ran ${runLog} miles! `
+    foxChat.textContent =  "Hooray! I reached my goal for the week."
 }}
 
 
@@ -103,18 +103,13 @@ foxChat.textContent = "I don't need another cookie."
 }
 
 function restTime() {
-    restLog = restLog + 2
-if (runLog >= runGoal){ 
+if (runLog >= runGoal || restLog >= 4){ 
     return
 } 
-else if (restlog = 4){
-    foxChat.textContent = " I don't want another nap. Can we run now?"
-}
-else
-foxChat.textContent = " I feel rested. Can we run now?"
+else 
     restLog = restLog + 2
-    console.log(restLog)
-
+    foxChat.textContent = " I feel rested. Can we run now?"
+console.log(restLog)
 }
 
 function endWeek() {
@@ -131,19 +126,17 @@ else if (weekNumber === 5) {
     foxPic.src = "images/happy-fox.jpg"
     weekStatus.textContent ="You did it!  Fox is ready to run a 5K!"
     foxChat.textContent = "Hooray! we did it!"
-    startBtn.style.display = 'none'
     confetti.start(2000)
     hooray.volume = .10
     hooray.play()
+    startBtn.style.display = 'none'
+
 }
 else {
     foxPic.src = "images/happy-fox.jpg"
     weekStatus.textContent =`Week ${weekNumber} of training completed!`
     foxChat.textContent = "This is awesome, let's keep going!"
     startBtn.textContent = "continue to next week"
-    runGoal = runGoal + 2
+    runGoal = runGoal + 2}
 
-if (rungoal === 6) {
-    distance = distance + 1
 }
-}}
