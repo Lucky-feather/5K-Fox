@@ -21,20 +21,20 @@ goRest.addEventListener('click', restTime)
 
 
 function init() {
-runLog = 0
-runGoal = 4
-restLog = 2
-energy = 4
-cookieTime = 0
-weekNumber = 0
-distance = 1
+    runLog = 0
+    runGoal = 4
+    restLog = 2
+    energy = 4
+    cookieTime = 0
+    weekNumber = 0
+    distance = 1
 
-resetBtn.style.display = 'none'
-careBtns.style.display = 'none'
-weekStatus.textContent = 'I want to run a 5k!'
-startBtn.style.display = 'block'
-startBtn.textContent = "Start"
-foxChat.innerHTML = "Hello!  I really want to run a 5k.  Can you help me train? <br> <br> I need to go for several runs during the week.  Sometimes I need to take a nap to get energy.  If I get grouchy, I need a cookie for motivation. <br> <br> You have 60 seconds to help me log a week's worth of runs, so take your time if you want.  Press the 'Start' button when you're ready" 
+    resetBtn.style.display = 'none'
+    careBtns.style.display = 'none'
+    weekStatus.textContent = 'I want to run a 5k!'
+    startBtn.style.display = 'block'
+    startBtn.textContent = "Start"
+    foxChat.innerHTML = "Hello!  I really want to run a 5k.  Can you help me train? <br> <br> I need to go for several runs during the week.  Sometimes I need to take a nap to get energy.  If I get grouchy, I need a cookie for motivation. <br> <br> You have 60 seconds to help me log a week's worth of runs, so take your time if you want.  Press the 'Start' button when you're ready" 
 }
 
 init()
@@ -44,7 +44,7 @@ function startWeek(){
     runLog = 0
     weekNumber = weekNumber + 1 
 if (runGoal >= 6) {
-        distance = distance + 0.5
+    distance = distance + 0.5
 }
 startTimer()
     weekStatus.textContent =`Week ${weekNumber} of Training.`
@@ -59,8 +59,8 @@ startTimer()
 }
 
 function startTimer() {
-let timeLeft = 60 
-let timer = setInterval(function() {
+    let timeLeft = 60 
+    let timer = setInterval(function() {
 	timeLeft -= 1
     timerEl.textContent = timeLeft + ' seconds remaining'
 if (timeLeft <= 0) {
@@ -95,7 +95,7 @@ function eatCookie() {
 } 
 else if (cookieTime >= 1) {
     foxChat.textContent = "I don't need another cookie."
-    } else { cookieTime = cookieTime + 1
+} else { cookieTime = cookieTime + 1
     foxChat.textContent = "Yum! Thanks, I'm not grouchy anymore"
     foxPic.src = "images/sitting-fox.jpg"
 }
@@ -128,7 +128,6 @@ else if (weekNumber === 5) {
     hooray.volume = .10
     hooray.play()
     startBtn.style.display = 'none'
-
 }
 else {
     foxPic.src = "images/happy-fox.jpg"
@@ -136,5 +135,4 @@ else {
     foxChat.textContent = "This is awesome, let's keep going!"
     startBtn.textContent = "continue to next week"
     runGoal = runGoal + 2}
-
 }
