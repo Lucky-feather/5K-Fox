@@ -15,6 +15,9 @@ Fox’s daily run quota is loosely based on a couch to 5k model, so it will incr
 game link:
 https://5k-fox.netlify.app/
 
+![start of game in mobile](images/mobile%20screenshot.png)
+![winning image on desktop](images/desktop-win-screenshot.png)
+
 #technologies used:
 
 html

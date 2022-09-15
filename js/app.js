@@ -24,7 +24,7 @@ runGoal = 2
 restLog = 2
 energy = 8
 cookieTime = 0
-weekNumber = 4
+weekNumber = 0
 distance = 1
 
 resetBtn.style.display = 'none'
