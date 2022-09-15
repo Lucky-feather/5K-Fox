@@ -46,7 +46,7 @@ function startWeek(){
 if (runGoal >= 6) {
         distance = distance + 0.5
 }
-    startTimer()
+startTimer()
     weekStatus.textContent =`Week ${weekNumber} of Training.`
     weekGoal.textContent = `Goal distance: ${runGoal} miles`
     goRun.textContent = ` Let's go for a ${distance} mile run`
@@ -56,7 +56,7 @@ if (runGoal >= 6) {
     timerEl.style.display = 'block'
     foxChat.textContent = " "
     foxPic.src = "images/sitting-fox.jpg"
-    }
+}
 
 function startTimer() {
 let timeLeft = 60 
@@ -94,7 +94,7 @@ function eatCookie() {
     if (runLog >= runGoal){ return 
 } 
 else if (cookieTime >= 1) {
-foxChat.textContent = "I don't need another cookie."
+    foxChat.textContent = "I don't need another cookie."
     } else { cookieTime = cookieTime + 1
     foxChat.textContent = "Yum! Thanks, I'm not grouchy anymore"
     foxPic.src = "images/sitting-fox.jpg"
@@ -111,9 +111,9 @@ else
 }
 
 function endWeek() {
-timerEl.style.display = 'none'
-startBtn.style.display = 'block'
-resetBtn.style.display = 'block'
+    timerEl.style.display = 'none'
+    startBtn.style.display = 'block'
+    resetBtn.style.display = 'block'
 if (runLog < runGoal) {
     foxChat.textContent = "Yikes, I didn't train enough this week"
     weekStatus.textContent =`Fox needs to try week ${weekNumber} again`

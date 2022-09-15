@@ -37,6 +37,7 @@ height: 40%;
 width: 100%;
 margin: 3px;
 }
+
 h2 {
 margin: 0;
 }
@@ -74,6 +75,7 @@ justify-content: center;
 flex-direction: column;
 align-items: center;
 font-size: 18px;
+background-color: #db3a34;
 }
 
 .fox-chat {
@@ -82,7 +84,7 @@ align-items: center;
 justify-content: center;
 margin: 0;
 padding: 3%;
-color: #292f36;
+color:#fcfff7;
 }
 
 #timer {
