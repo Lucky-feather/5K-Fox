@@ -22,7 +22,7 @@ goRest.addEventListener('click', restTime)
 
 function init() {
 runLog = 0
-runGoal = 5
+runGoal = 4
 restLog = 2
 energy = 4
 cookieTime = 0
@@ -71,7 +71,6 @@ if (timeLeft <= 0) {
 }
 
 function logRun() {
-
 if (runLog >= runGoal){ return 
 }
 else if (restLog === 0) { 
@@ -109,7 +108,6 @@ if (runLog >= runGoal || restLog >= 4){
 else 
     restLog = restLog + 2
     foxChat.textContent = " I feel rested. Can we run now?"
-console.log(restLog)
 }
 
 function endWeek() {
