@@ -145,7 +145,7 @@ body {
 margin: 0;
 display: grid;
 grid-template-columns: 25% 45% 30%;
-grid-template-rows: 15% 5% 40% 40%; 
+grid-template-rows: 15% 5% 40% 25%; 
 }
 
 #banner {
@@ -157,6 +157,7 @@ justify-content:center;
 align-items: center;
 flex-direction: row;
 align-content: flex-start;
+margin-bottom: 10%;
 }
 
 #headers {
@@ -170,6 +171,7 @@ display: inline;
 height: auto;
 width: auto;
 margin: 0;
+padding: 0%;
 font-style: bolder;
 }
 
@@ -185,13 +187,12 @@ grid-area: 3/2/4/3;
 }
 
 img {
-max-width: 75%;
+max-width: 50%;
 }
 
 .info-box {
 display: flex;
 grid-area: 4/2/5/3;
-size: 100%;
 justify-content: center;
 align-content: flex-start;
 align-items: center;
@@ -200,7 +201,7 @@ border-radius: 5%;
 color:#fcfff7;
 font-size: 20px;
 margin: 0;
-min-height: 300px;
+min-height: 200px;
 min-width: 450px;
 }
 
