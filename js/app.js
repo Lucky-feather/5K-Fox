@@ -75,6 +75,7 @@ if (runLog >= runGoal){ return
 }
 else if (restLog === 0) { 
     foxChat.textContent = "I'm too tired to run"
+    foxPic.src = "images/sleeping-fox.jpg"
 }
 else if (runLog > runGoal - 3 && cookieTime === 0) {
     foxChat.textContent = "I'm grouchy, running is dumb. Can I have a cookie?"
@@ -108,6 +109,7 @@ if (runLog >= runGoal || restLog >= 4){
 else 
     restLog = restLog + 2
     foxChat.textContent = " I feel rested. Can we run now?"
+    foxPic.src = "images/sitting-fox.jpg"
 }
 
 function endWeek() {

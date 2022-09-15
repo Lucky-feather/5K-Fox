@@ -3,6 +3,9 @@
 
 ## Game Style: Digital pet
 
+#### Background
+This game was created as a project assignment for Unit 1 of General Assembly's Software Engineering Immersive program.
+
 #### Objective: 
 Using run, nap, and cookie buttons, help Fox meet goals to prepare for running a 5k.
 
@@ -42,7 +45,8 @@ Desktop version winning:
 - Text animation via animate.css 
 - Opening fox photo by Olga Kononenko via Unsplash 
 - Closeup photo of fox face by Peter Lloyd via Unsplash 
-- Photo of fox in a parking lot by Freezer via Unsplash 
+- Photo of fox in a parking lot by Freezer via Unsplash
+- Photo of sleeping fox by Qijin Xu via Unsplash
 - Audio file 'Game Win' by elijahdanie via freesound.org
 - Favicon from favicon.io
 - Google font: Poppins
