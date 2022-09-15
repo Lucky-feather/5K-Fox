@@ -10,6 +10,8 @@ const careBtns = document.querySelector("#button-box")
 const weekGoal = document.querySelector("#week-goal")
 const foxPic = document.querySelector("#fox-pic")
 
+const hooray = new Audio("audio/game-win.mp3")
+
 
 resetBtn.addEventListener('click', init)
 goRun.addEventListener('click', logRun)
@@ -24,7 +26,7 @@ runGoal = 2
 restLog = 2
 energy = 8
 cookieTime = 0
-weekNumber = 0
+weekNumber = 4
 distance = 1
 
 resetBtn.style.display = 'none'
@@ -108,15 +110,15 @@ else if (restlog = 4){
     foxChat.textContent = " I don't want another nap. Can we run now?"
 }
 else
-restLog = restLog + 1
-console.log(restLog)
-foxChat.textContent = " I feel rested. Can we run now?"
+    restLog = restLog + 1
+    console.log(restLog)
+    foxChat.textContent = " I feel rested. Can we run now?"
 }
 
 function endWeek() {
 timerEl.style.display = 'none'
-    startBtn.style.display = 'block'
-    resetBtn.style.display = 'block'
+startBtn.style.display = 'block'
+resetBtn.style.display = 'block'
 if (runLog < runGoal) {
     foxChat.textContent = "Yikes, I didn't train enough this week"
     weekStatus.textContent =`Fox needs to try week ${weekNumber} again`
@@ -126,16 +128,19 @@ if (runLog < runGoal) {
 else if (weekNumber === 5) {
     foxPic.src = "images/happy-fox.jpg"
     weekStatus.textContent ="You did it!  Fox is ready to run a 5K!"
-    confetti.start(2000)
     foxChat.textContent = "Hooray! we did it!"
     startBtn.style.display = 'none'
+    confetti.start(2000)
+    hooray.volume = .10
+    hooray.play()
 }
 else {
     foxPic.src = "images/happy-fox.jpg"
+    weekStatus.textContent =`Week ${weekNumber} of training completed!`
     foxChat.textContent = "This is awesome, let's keep going!"
     startBtn.textContent = "continue to next week"
     runGoal = runGoal + 2
-    weekStatus.textContent =`Week ${weekNumber} of training completed!`
+
 if (rungoal === 6) {
     distance = distance + 1
 }
