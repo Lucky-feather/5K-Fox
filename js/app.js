@@ -8,6 +8,7 @@ const foxChat = document.querySelector(".fox-chat")
 const timerEl = document.querySelector("#timer")
 const careBtns = document.querySelector("#button-box")
 const weekGoal = document.querySelector("#week-goal")
+const foxPic = document.querySelector("#fox-pic")
 
 
 resetBtn.addEventListener('click', init)
@@ -20,7 +21,7 @@ goRest.addEventListener('click', restTime)
 function init() {
 runLog = 0
 runGoal = 2
-restLog = runGoal - 1
+restLog = 2
 energy = 8
 cookieTime = 0
 weekNumber = 0
@@ -49,6 +50,8 @@ function startWeek(){
     resetBtn.style.display = 'none'
     timerEl.style.display = 'block'
     foxChat.textContent = " "
+    foxPic.src = "images/sitting-fox.jpg"
+
     }
 
 function startTimer() {
@@ -74,7 +77,7 @@ else if (restLog === 0) {
 }
 else if (runLog > runGoal - 2 && cookieTime === 0) {
     foxChat.textContent = "I'm grouchy, running is dumb. Can I have a cookie?"
-    console.log(cookieTime)
+    foxPic.src = "images/parking-lot-fox.jpg"
 }
 else {
     runLog = runLog + distance
@@ -82,8 +85,7 @@ else {
     foxChat.textContent = `Miles run so far: ${runLog}`
 }
 if (runLog >= runGoal) { 
-    foxChat.textContent =  `Hooray! I reached my goal for the week. 
-    I ran ${runLog} miles! `
+    foxChat.textContent =  `Hooray! I reached my goal for the week. I ran ${runLog} miles! `
 }}
 
 
@@ -94,15 +96,20 @@ else if (cookieTime >= 1) {
 foxChat.textContent = "I don't need another cookie."
     } else { cookieTime = cookieTime + 1
     foxChat.textContent = "Yum! Thanks, I'm not grouchy anymore"
+    foxPic.src = "images/sitting-fox.jpg"
 }
 }
 
 function restTime() {
 if (runLog >= runGoal){ 
-    return 
+    return
 } 
+else if (restlog = 4){
+    foxChat.textContent = " I don't want another nap. Can we run now?"
+}
 else
 restLog = restLog + 1
+console.log(restLog)
 foxChat.textContent = " I feel rested. Can we run now?"
 }
 
@@ -122,11 +129,12 @@ foxChat.textContent = "Hooray! we did it!"
 startBtn.style.display = 'none'
 }
 else {
-    console.log("New training week")
+    foxPic.src = "images/happy-fox.jpg"
     foxChat.textContent = "This is awesome, let's keep going!"
     startBtn.textContent = "continue to next week"
-    distance = distance + 1
     runGoal = runGoal + 2
     weekStatus.textContent =`Week ${weekNumber} of training completed!`
-    
+if (rungoal === 6) {
+    distance = distance + 1
+}
 }}
