@@ -28,7 +28,7 @@ function init() {
     cookieTime = 0
     weekNumber = 0
     distance = 1
-
+    foxPic.src = "images/sitting-fox.jpg"
     resetBtn.style.display = 'none'
     careBtns.style.display = 'none'
     weekStatus.textContent = 'I want to run a 5k!'
