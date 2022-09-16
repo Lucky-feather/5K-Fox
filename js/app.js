@@ -59,7 +59,7 @@ startTimer()
 }
 
 function startTimer() {
-    let timeLeft = 60 
+    let timeLeft = 30 
     let timer = setInterval(function() {
 	timeLeft -= 1
     timerEl.textContent = timeLeft + ' seconds remaining'

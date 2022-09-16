@@ -56,6 +56,10 @@ Desktop version winning:
 https://www.runnersworld.com/uk/training/5km/a760067/six-week-beginner-5k-schedule/
 
 
-#### Next Steps
-I would like to evolve this into a running accountability program.  Instead of having a distance assigned to the 'run' button, a person would log their own mileage from a run.  These user-created logs would accumulate towards a weekly mileage goal.
+#### Icebox
+- Status bar
+- Sync ability to log runs with timer, so it forces player to space out runs
+- Add random number generator to cookie request so it's less predictable
 
+- Alternate idea:
+     - I would like to evolve this into a running accountability program.  The length of a "week" would actually stretch into a full week. Instead of having a distance assigned to the 'run' button, a person would log their own mileage from a run.  These user-created logs would accumulate towards a weekly mileage goal.
